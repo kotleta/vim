@@ -14,6 +14,7 @@ set fileencodings=utf8,cp1251
 
 sy on
 set nu
+set tabpagemax=20
 
 "Titles, statuses
 set title
@@ -24,6 +25,25 @@ set t_Co=256
 "set t_Co=16
 colorscheme wombat256
 "colorscheme gardener
+
+set laststatus=2
+
+"set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+set statusline=%F       "full filename
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%y      "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+
+"highlight colomn and line
+set cursorline cursorcolumn
+hi CursorLine  cterm=NONE guibg=Grey40
 
 " по Ctrl+p форматирование perl-кода под стандарты заданые в perltidy
 "map <C-p> :% ! perltidy<CR>
