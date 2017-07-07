@@ -57,12 +57,6 @@ nnoremap <C-n> :nohlsearch<CR>
 " в визуальном режиме по команде * подсвечивать выделение
 vnoremap * y :execute ":let @/=@\""<CR> :execute "set hlsearch"<CR>
 
-" Tab is Next window
-nnoremap <Tab> <C-W>w
-
-" Shift-Tab is Previous window
-nnoremap <S-Tab> <C-W>W
-
 function! s:ToggleQuote()
 	let q = searchpos("'", 'n', line('.'))
 	let qb = searchpos("'", 'bn', line('.'))
@@ -77,3 +71,8 @@ function! s:ToggleQuote()
 endfunction
 
 nnoremap <silent>'  :<C-U>call <SID>ToggleQuote()<CR>
+
+" прокручивать мышкой + курсор за мышкой
+set mouse=a
+map <S-Insert> <MiddleMouse>
+map! <S-Insert> <MiddleMouse>
