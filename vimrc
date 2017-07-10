@@ -15,11 +15,17 @@ set fileencodings=utf8,cp1251
 sy on
 set nu
 set tabpagemax=20
+" highlight after 100 symbol in line
+au BufWinEnter *.pm  let w:m1=matchadd('Search', '\%>100v.*', -1)
+au BufWinEnter *.lua let w:m1=matchadd('Search', '\%>100v.*', -1)
 
 "Titles, statuses
 set title
 set hlsearch
 set ignorecase
+
+" all numbers is 10
+set nrformats=
 
 set t_Co=256
 "set t_Co=16
