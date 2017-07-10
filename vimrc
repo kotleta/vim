@@ -1,3 +1,6 @@
+" cd ~/.vim/bundle
+" git clone git://github.com/tpope/vim-commentary.git
+
 "tab
 set tabstop=4
 set shiftwidth=4
