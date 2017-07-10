@@ -1,5 +1,4 @@
-" cd ~/.vim/bundle
-" git clone git://github.com/tpope/vim-commentary.git
+" https://github.com/tpope/vim-commentary
 
 "tab
 set tabstop=4
