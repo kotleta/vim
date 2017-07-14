@@ -1,4 +1,8 @@
 " https://github.com/tpope/vim-commentary
+" add more plugins
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
 
 "tab
 set tabstop=4
@@ -17,6 +21,7 @@ set fileencodings=utf8,cp1251
 sy on
 set nu
 set tabpagemax=20
+
 " highlight after 100 symbol in line
 au BufWinEnter *.pm  let w:m1=matchadd('Search', '\%>100v.*', -1)
 au BufWinEnter *.lua let w:m1=matchadd('Search', '\%>100v.*', -1)
@@ -65,6 +70,7 @@ nnoremap <C-n> :nohlsearch<CR>
 " в визуальном режиме по команде * подсвечивать выделение
 vnoremap * y :execute ":let @/=@\""<CR> :execute "set hlsearch"<CR>
 
+
 function! s:ToggleQuote()
 	let q = searchpos("'", 'n', line('.'))
 	let qb = searchpos("'", 'bn', line('.'))
@@ -80,7 +86,10 @@ endfunction
 
 nnoremap <silent>'  :<C-U>call <SID>ToggleQuote()<CR>
 
-" прокручивать мышкой + курсор за мышкой
+" mouse is active and visual
 set mouse=a
 map <S-Insert> <MiddleMouse>
 map! <S-Insert> <MiddleMouse>
+
+" in cmd: path to current file
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
