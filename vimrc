@@ -4,6 +4,9 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+set t_Co=256
+colorscheme wombat256
+
 "tab
 set tabstop=4
 set shiftwidth=4
@@ -23,8 +26,10 @@ set nu
 set tabpagemax=20
 
 " highlight after 100 symbol in line
-au BufWinEnter *.pm  let w:m1=matchadd('Search', '\%>100v.*', -1)
-au BufWinEnter *.lua let w:m1=matchadd('Search', '\%>100v.*', -1)
+highlight OverLine cterm=NONE ctermfg=black ctermbg=LightGrey
+au BufWinEnter *.pl  let w:m1=matchadd('OverLine', '\%>100v.*', -1)
+au BufWinEnter *.pm  let w:m1=matchadd('OverLine', '\%>100v.*', -1)
+au BufWinEnter *.lua let w:m1=matchadd('OverLine', '\%>100v.*', -1)
 
 "Titles, statuses
 set title
@@ -33,11 +38,6 @@ set ignorecase
 
 " all numbers is 10
 set nrformats=
-
-set t_Co=256
-"set t_Co=16
-colorscheme wombat256
-"colorscheme gardener
 
 set laststatus=2
 
