@@ -1,6 +1,6 @@
 " https://github.com/tpope/vim-commentary
 " add more plugins
-execute pathogen#infect()
+" execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
