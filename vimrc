@@ -1,3 +1,6 @@
+scriptencoding utf-8
+set encoding=utf-8
+set fileencodings=utf8,cp1251
 " https://github.com/tpope/vim-commentary
 " add more plugins
 " execute pathogen#infect()
@@ -17,9 +20,6 @@ set list
 "set listchars=tab:\|-,eol:·,precedes:«,extends:»
 set listchars=tab:\|·,precedes:«,extends:»,trail:·
 "NOTE the space char after last backslash.
-
-set encoding=utf-8
-set fileencodings=utf8,cp1251
 
 sy on
 set nu
