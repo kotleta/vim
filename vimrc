@@ -34,6 +34,7 @@ au BufWinEnter *.lua let w:m1=matchadd('OverLine', '\%>100v.*', -1)
 "Titles, statuses
 set title
 set hlsearch
+set incsearch
 set ignorecase
 
 " all numbers is 10
@@ -70,26 +71,10 @@ nnoremap <C-n> :nohlsearch<CR>
 " в визуальном режиме по команде * подсвечивать выделение
 vnoremap * y :execute ":let @/=@\""<CR> :execute "set hlsearch"<CR>
 
-
-function! s:ToggleQuote()
-	let q = searchpos("'", 'n', line('.'))
-	let qb = searchpos("'", 'bn', line('.'))
-	let dq = searchpos('"', 'n', line('.'))
-	let dqb = searchpos('"', 'bn', line('.'))
-
-	if q[0] > 0 && qb[0] > 0 && (dq[0] == 0 || dq[0] > q[0])
-		execute "normal mzcs'\"`z"
-	elseif dq[0] > 0 && dqb[0] > 0
-		execute "normal mzcs\"'`z"
-	endif
-endfunction
-
-nnoremap <silent>'  :<C-U>call <SID>ToggleQuote()<CR>
-
 " mouse is active and visual
-set mouse=a
-map <S-Insert> <MiddleMouse>
-map! <S-Insert> <MiddleMouse>
+" set mouse=a
+" map <S-Insert> <MiddleMouse>
+" map! <S-Insert> <MiddleMouse>
 
 " in cmd: path to current file
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
