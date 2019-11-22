@@ -7,6 +7,7 @@ set fileencodings=utf8,cp1251
 " https://github.com/tpope/vim-commentary
 " https://github.com/scrooloose/nerdtree
 " https://github.com/ctrlpvim/ctrlp.vim
+" https://github.com/tpope/vim-fugitive
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
